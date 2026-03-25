@@ -8,8 +8,11 @@ const Layout = React.lazy(() => import('./components/layout/Layout'));
 const Landing = React.lazy(() => import('./pages/Landing'));
 const Dashboard = React.lazy(() => import('./pages/Dashboard'));
 const RoomDetail = React.lazy(() => import('./pages/RoomDetail'));
+const Rooms = React.lazy(() => import('./pages/Rooms'));
 const Threads = React.lazy(() => import('./pages/Threads'));
+const ThreadDetail = React.lazy(() => import('./pages/ThreadDetail'));
 const Journal = React.lazy(() => import('./pages/Journal'));
+const JournalEntry = React.lazy(() => import('./pages/JournalEntry'));
 const Mirror = React.lazy(() => import('./pages/Mirror'));
 const Create = React.lazy(() => import('./pages/Create'));
 const Settings = React.lazy(() => import('./pages/Settings'));
@@ -25,9 +28,12 @@ function App() {
           <Route path="/auth" element={<Auth />} />
           <Route element={<Layout />}>
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/rooms" element={<Rooms />} />
             <Route path="/rooms/:id" element={<RoomDetail />} />
             <Route path="/threads" element={<Threads />} />
+            <Route path="/threads/:id" element={<ThreadDetail />} />
             <Route path="/journal" element={<Journal />} />
+            <Route path="/journal/:id" element={<JournalEntry />} />
             <Route path="/mirror" element={<Mirror />} />
             <Route path="/create" element={<Create />} />
             <Route path="/settings" element={<Settings />} />
