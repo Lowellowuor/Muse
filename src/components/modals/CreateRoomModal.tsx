@@ -6,12 +6,12 @@ import { useRoomsStore, type RoomTheme } from '../../store/useRoomsStore';
 interface Props { onClose: () => void; }
 
 const paletteColors: { name: RoomTheme; hex: string; label: string }[] = [
-  { name: 'indigo', hex: '#6366f1', label: 'Indigo' },
-  { name: 'emerald', hex: '#10b981', label: 'Emerald' },
-  { name: 'rose', hex: '#f43f5e', label: 'Rose' },
-  { name: 'amber', hex: '#f59e0b', label: 'Amber' },
-  { name: 'cyan', hex: '#06b6d4', label: 'Cyan' },
-  { name: 'slate', hex: '#64748b', label: 'Slate' },
+  { name: 'white', hex: '#ffffff', label: 'White' },
+  { name: 'white', hex: '#ffffff', label: 'White' },
+  { name: 'white', hex: '#ffffff', label: 'White' },
+  { name: 'white', hex: '#ffffff', label: 'White' },
+  { name: 'white', hex: '#ffffff', label: 'White' },
+  { name: 'white', hex: '#ffffff', label: 'White' },
 ];
 
 export default function CreateRoomModal({ onClose }: Props) {
@@ -20,7 +20,7 @@ export default function CreateRoomModal({ onClose }: Props) {
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const [themeColor, setThemeColor] = useState<RoomTheme>('indigo');
+  const [themeColor, setThemeColor] = useState<RoomTheme>('white');
   const [coverImage, setCoverImage] = useState('');
   const [isPublic, setIsPublic] = useState(false);
   const [error, setError] = useState('');
@@ -117,7 +117,7 @@ export default function CreateRoomModal({ onClose }: Props) {
               placeholder="e.g. Music & Ambience"
               className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white/30 transition-all text-base font-medium tracking-tight"
             />
-            {error && <p className="text-rose-400 text-xs mt-2 font-medium">{error}</p>}
+            {error && <p className="text-white/70 text-xs mt-2 font-medium">{error}</p>}
           </div>
 
           {/* Description */}
@@ -157,7 +157,7 @@ export default function CreateRoomModal({ onClose }: Props) {
             </button>
             <button 
               onClick={() => setIsPublic(true)}
-              className={`flex-1 py-4 rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer ${isPublic ? 'bg-canvas-primary/20 text-canvas-primary shadow-xl shadow-canvas-primary/5' : 'text-gray-500 hover:text-gray-300'}`}
+              className={`flex-1 py-4 rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer ${isPublic ? 'bg-white/80/20 text-white/80 shadow-xl shadow-white/80/5' : 'text-gray-500 hover:text-gray-300'}`}
               type="button"
             >
               <Globe size={16} />

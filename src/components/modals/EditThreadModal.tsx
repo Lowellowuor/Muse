@@ -83,7 +83,7 @@ export default function EditThreadModal({ thread, onClose, onDeleted }: Props) {
           <div className="mb-5">
             <label className="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Title *</label>
             <input value={title} onChange={e => { setTitle(e.target.value); setError(''); }} className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white focus:outline-none focus:border-white/30 transition-all text-base font-medium" />
-            {error && <p className="text-rose-400 text-xs mt-2 font-medium">{error}</p>}
+            {error && <p className="text-white/70 text-xs mt-2 font-medium">{error}</p>}
           </div>
 
           <div className="mb-5">
@@ -122,7 +122,7 @@ export default function EditThreadModal({ thread, onClose, onDeleted }: Props) {
             </button>
             <button 
               onClick={() => setIsPublic(true)}
-              className={`flex-1 py-3 rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer ${isPublic ? 'bg-canvas-primary/20 text-canvas-primary shadow-lg shadow-canvas-primary/5' : 'text-gray-500 hover:text-gray-300'}`}
+              className={`flex-1 py-3 rounded-xl flex items-center justify-center gap-2 transition-all cursor-pointer ${isPublic ? 'bg-white/80/20 text-white/80 shadow-lg shadow-white/80/5' : 'text-gray-500 hover:text-gray-300'}`}
             >
               <Globe size={14} />
               <span className="text-[9px] font-bold uppercase tracking-widest">Community Hub</span>
@@ -135,15 +135,15 @@ export default function EditThreadModal({ thread, onClose, onDeleted }: Props) {
           </button>
 
           {!confirmDelete ? (
-            <button onClick={() => setConfirmDelete(true)} className="w-full py-3 rounded-2xl border border-rose-500/20 text-rose-400 text-xs font-bold uppercase tracking-widest hover:bg-rose-500/10 transition-all cursor-pointer flex items-center justify-center gap-2">
+            <button onClick={() => setConfirmDelete(true)} className="w-full py-3 rounded-2xl border border-white/80/20 text-white/70 text-xs font-bold uppercase tracking-widest hover:bg-white/80/10 transition-all cursor-pointer flex items-center justify-center gap-2">
               <Trash2 size={14} /> Delete Thread
             </button>
           ) : (
-            <div className="bg-rose-500/10 border border-rose-500/30 rounded-2xl p-4">
-              <div className="flex items-center gap-2 text-rose-400 text-sm font-bold mb-3"><AlertTriangle size={16} /> This cannot be undone.</div>
+            <div className="bg-white/80/10 border border-white/80/30 rounded-2xl p-4">
+              <div className="flex items-center gap-2 text-white/70 text-sm font-bold mb-3"><AlertTriangle size={16} /> This cannot be undone.</div>
               <div className="flex gap-2">
                 <button onClick={() => setConfirmDelete(false)} className="flex-1 py-2.5 rounded-xl border border-white/10 text-gray-400 text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-all cursor-pointer">Cancel</button>
-                <button onClick={handleDelete} className="flex-[2] py-2.5 rounded-xl bg-rose-500 text-white text-xs font-bold uppercase tracking-widest hover:bg-rose-600 transition-all cursor-pointer">Yes, Delete</button>
+                <button onClick={handleDelete} className="flex-[2] py-2.5 rounded-xl bg-white/80 text-white text-xs font-bold uppercase tracking-widest hover:bg-white/90 transition-all cursor-pointer">Yes, Delete</button>
               </div>
             </div>
           )}

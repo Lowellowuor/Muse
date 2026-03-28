@@ -109,7 +109,7 @@ export default function CreateThreadModal({ onClose }: Props) {
               placeholder="e.g. The Aesthetic of Restraint"
               className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white/30 transition-all text-base font-medium tracking-tight"
             />
-            {error && <p className="text-rose-400 text-xs mt-2 font-medium">{error}</p>}
+            {error && <p className="text-white/70 text-xs mt-2 font-medium">{error}</p>}
           </div>
 
           {/* Thesis */}
