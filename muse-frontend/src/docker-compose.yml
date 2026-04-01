@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: muse_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./muse-backend/database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+
+  backend:
+    build: ./muse-backend
+    ports:
+      - "3001:3001"
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: muse_db
+      DB_USER: postgres
+      DB_PASSWORD: password
+      JWT_SECRET: your_secret_key
+    depends_on:
+      - postgres
+
+  frontend:
+    build: ./muse
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
