@@ -1,0 +1,10 @@
+// Re-export all thread components for backward compatibility
+export { default as ActiveCircleCard } from '../threads/ActiveCircleCard';
+export { default as CollaboratorCard } from '../threads/CollaboratorCard';
+export { default as CommunityRoomCard } from '../threads/CommunityRoomCard';
+export { default as CommunityPulseStrip } from '../threads/CommunityPulseStrip';
+export { default as ConnectionMap } from '../threads/ConnectionMap';
+export { default as ConversationCard } from '../threads/ConversationCard';
+export { default as InsightCard } from '../threads/InsightCard';
+export { default as SharedThemeCluster } from '../threads/SharedThemeCluster';
+export { default as ThoughtfulComposer } from '../threads/ThoughtfulComposer';
